@@ -133,7 +133,7 @@ export default async function Home() {
         {topContributors.length > 0 && (
           <div className="w-full lg:w-[380px] shrink-0 bg-ground border border-line rounded-2xl shadow-card px-5 pt-4 pb-2">
             <div className="flex items-center justify-between pb-1.5">
-              <h2 className="text-[15px] font-[650] text-ink"> This Week's Top Contributors</h2>
+              <h2 className="text-[15px] font-[650] text-ink"> {"This Week's Top Contributors"}</h2>
               <span className="inline-flex items-center gap-1.5 text-[10.5px] font-[650] tracking-[0.05em] text-success-600 bg-success-0 rounded-full px-2.5 py-1">
                 <span className="live-dot w-1.5 h-1.5 rounded-full bg-success-400" />
                 LIVE
