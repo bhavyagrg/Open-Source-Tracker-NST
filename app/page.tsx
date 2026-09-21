@@ -52,7 +52,8 @@ function RankChip({ rank }: { rank: number }) {
 export default async function Home() {
   const events = await getEventsKV();
   const achievers = await getAchieversKV();
-  const cache = await readSummaryCache("week");
+  const cache = await readSummaryCache();
+  const weeklyCache = await readSummaryCache("week");
 
   // Stats from achievers
   const programSet = new Set(achievers.flatMap((a) => a.programs.map((p) => p.name)));
@@ -66,7 +67,7 @@ export default async function Home() {
   const totalPRs = cache?.summaries.reduce((s, c) => s + c.totalPRs, 0) ?? 0;
 
   // Top contributors in this week(top 5 from cache for the leaderboard preview card)
-  const topContributors = cache?.summaries.slice(0, 5) ?? [];
+  const topContributors = weeklyCache?.summaries.slice(0, 5) ?? [];
   return (
     <main className="min-h-screen bg-ground">
       {/* Announcement banner */}
